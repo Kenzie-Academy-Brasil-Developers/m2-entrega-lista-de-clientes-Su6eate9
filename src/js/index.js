@@ -1,5 +1,4 @@
 import { Api } from "./api.js"
-import { CadastrarCliente } from "./cadastrar.js"; 
 
 export class CreateCards{
     static async cards(){
