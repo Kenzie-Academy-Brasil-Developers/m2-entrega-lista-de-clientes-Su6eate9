@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/styleBase.css">
     <title>Entrega Lista de Clientes</title>
+    <script defer type="module" src="../js/editar.js"></script>
 </head>
 <body>
     <header>
@@ -22,9 +23,9 @@
         
         <label for="cliente">Escolha o cliente que quer editar</label>
         
-        <select name="cliente"></select>
+        <select id="search" name="cliente"></select>
 
-        <button>Buscar Cliente</button>
+        <button id="btnSearch">Buscar Cliente</button>
 
     </form>
     
@@ -33,33 +34,33 @@
 
         <h3>Dados pessoais</h3>
 
-        <input type="text" name="nome" placeholder="digite seu nome"/>
+        <input id="nomeUpdate" type="text" name="nome" placeholder="digite seu nome"/>
 
-        <input type="text" name="email" placeholder="digite sua email"/>
+        <input id="emailUpdate" type="text" name="email" placeholder="digite sua email"/>
 
-        <input type="number" name="idade" placeholder="digite sua idade"/>
+        <input id="idadeUpdate" type="number" name="idade" placeholder="digite sua idade"/>
 
-        <input type="text" name="cpf" placeholder="digite seu cpf"/>
+        <input id="cpfUpdate" type="text" name="cpf" placeholder="digite seu cpf"/>
 
-        <input type="text" name="sexo" placeholder="digite seu sexo"/>
+        <input id="sexoUpdate" type="text" name="sexo" placeholder="digite seu sexo"/>
 
 
         <h3>Endereço</h3>
 
-        <input type="number" name="cep" placeholder="digite seu cep"/>
+        <input id="cepUpdate" type="number" name="cep" placeholder="digite seu cep"/>
         
-        <input type="text" name="rua" placeholder="digite sua rua"/>
+        <input id="ruaUpdate" type="text" name="rua" placeholder="digite sua rua"/>
 
-        <input type="number" name="numero" placeholder="digite o numero"/>
+        <input id="numeroUpdate" type="number" name="numero" placeholder="digite o numero"/>
 
-        <input type="text" name="bairro" placeholder="digite seu bairro"/>
+        <input id="bairroUpdate" type="text" name="bairro" placeholder="digite seu bairro"/>
 
-        <input type="text" name="cidade" placeholder="digite sua cidade"/>
+        <input id="cidadeUpdate" type="text" name="cidade" placeholder="digite sua cidade"/>
 
-        <input type="text" name="estado" placeholder="digite seu estado"/>
+        <input id="estadoUpdate" type="text" name="estado" placeholder="digite seu estado"/>
 
 
-        <button>Atualizar Dados</button>
+        <button id="btnUpdate">Atualizar Dados</button>
     </form>
 
 
