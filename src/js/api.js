@@ -1,58 +1,55 @@
 export class Api {
-    static baseUrl = "https://atividade-api-clientes.herokuapp.com"
+    static url = "https://atividade-api-clientes.herokuapp.com"
     static headers = {
         "Content-Type": "application/json"
     }
     static async listarClientes(){
-        const apiClients = await fetch(`${Api.baseUrl}/clientes`)
+        return await fetch(`${Api.url}/clientes`)
         .then(response => response.json())
         .then(json => json)
         .catch(error => console.log(error))
-        return apiClients
     }
-
     static async cadastrarCliente(data){
-        const newUser = await fetch(`${Api.baseUrl}/clientes`, {
+        return await fetch(`${Api.url}/clientes`, {
             method: "POST",
-            headers: this.headers,
+            headers: {
+            "Content-Type": "application/json"
+            },
             body: JSON.stringify(data)
         }).then(response => response.json())
-        .then(json =>{
+        .then(json => {
             setTimeout(() => {
-                Window.location.assign("../../index.html")
+                window.location.assign("../../index.html")
+            }, 2000);
+            return json
+        })
+        .catch(error => console.log(error))
+    }
+    static async editarCliente(id,data){
+        return await fetch(`${Api.url}/clientes/${id}`, {
+            method: "PATCH",
+            headers: Api.headers,
+            body: JSON.stringify(data)
+        }).then(response => response.json())
+        .then(json => {
+            console.log(json)
+            setTimeout(() => {
+                window.location.assign("../../index.html")
             }, 2000);
             return json
         }).catch(error => console.log(error))
-        return newUser
     }
-
-    static async editarCliente(id, data){
-        const updateClient = await fetch(`${Api.baseUrl}/clientes/${id}`, {
-            method: "PATCH",
-            headers: this.headers,
-            body: JSON.stringify(data)
-        }).then(response => response.json()
-        .then(json => {
-            setTimeout(() => {
-                Window.location.assign("../../index.html")
-            }, 2000);
-            return json
-        })).catch(error => console.log(error))
-        return updateClient
-    }
-
     static async deletarCliente(id){
-        const deleteClient = await fetch(`${Api.baseUrl}/clientes/${id}`, {
+        const deleteClient = await fetch(`${Api.url}/clientes/${id}`, {
             method: "DELETE",
             headers: this.headers
         }).then(response => response.json())
         .then(json => {
             setTimeout(() => {
-                Window.location.assign("../../index.html")
+                window.location.assign("../../index.html")
             }, 2000);
             return json
         }).catch(error => console.log(error))
         return deleteClient
     }
-
 }
